@@ -20,7 +20,7 @@ El presente trabajo consiste en el modelado arquitectónico completo de un Siste
 
 ## Diagrama de Clases UML
 
-![Diagrama de Clases](ruta/al/diagrama/clases.png)
+![Diagrama de Clases](/diagramas/diagrama%20de%20clases.svg)
 
 ### Justificación Profunda de Patrones
 
