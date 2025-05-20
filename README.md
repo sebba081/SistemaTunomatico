@@ -6,7 +6,7 @@ El presente trabajo consiste en el modelado arquitectónico completo de un Siste
 
 ## Diagrama de Casos de Uso UML
 
-![Diagrama de Casos de Uso](ruta/al/diagrama/casos_de_uso.png)
+![Diagrama de Casos de Uso](diagramas/caso de uso.svg)
 
 ### Descripción y Justificación de Relaciones
 
@@ -15,8 +15,8 @@ El presente trabajo consiste en el modelado arquitectónico completo de un Siste
   - **Recepcionista**: Responsable de atender a los clientes según el turno en el que se encuentra, atenderlos y posteriormente avanzar el turno y atender al nuevo cliente.
 
 - **Relaciones Aplicadas**:
-  - **<<include>>**: Utilizado en procesos donde el caso de uso depende de otro obligatorio, como en el caso de reservar un turno, es necesario generar un número para ser atendido.
-  - **<<extend>>**: Utilizado en procesos donde es opcional el proceso del caso de uso, como en el caso de enviar una notificación SMS, ya que el cliente tiene la opción de querer recibirla o no.
+  - **<include>**: Utilizado en procesos donde el caso de uso depende de otro obligatorio, como en el caso de reservar un turno, es necesario generar un número para ser atendido.
+  - **<extend>**: Utilizado en procesos donde es opcional el proceso del caso de uso, como en el caso de enviar una notificación SMS, ya que el cliente tiene la opción de querer recibirla o no.
 
 ## Diagrama de Clases UML
 
