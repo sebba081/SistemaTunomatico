@@ -1,52 +1,62 @@
 # Sistema Tunomático — Modelado Arquitectónico Profesional
 
-## Descripción General
+## 📌 Descripción General
 
-El presente trabajo consiste en el modelado arquitectónico completo de un Sistema de Gestión de Turnos Digitales (Tunomático), siguiendo buenas prácticas de diseño orientado a objetos y aplicando patrones de diseño reconocidos. El objetivo es demostrar la transición completa desde la visión funcional (casos de uso) hasta la arquitectura física (implementación), reflejando tanto el diseño lógico (diagrama de clases con patrones aplicados) como la distribución en nodos y componentes reales (diagrama de implementación UML).
+Este proyecto corresponde al modelado arquitectónico completo del Sistema Tunomático, una solución digital para la gestión de turnos en entornos de atención al cliente. Se aplican principios de diseño orientado a objetos y se incorporan patrones de diseño clásicos para estructurar la solución desde su análisis funcional hasta su arquitectura física.
 
-## Diagrama de Casos de Uso UML
+El objetivo es representar el sistema desde distintas perspectivas, incluyendo:
+- Diagrama de Casos de Uso (funcional).
+- Diagrama de Clases (lógico).
+- Diagrama de Implementación (físico).
 
-![Diagrama de Casos de Uso](/diagramas/diagrama%20de%20caso%20de%20uso.svg)
+## 🧩 Diagrama de Casos de Uso UML
 
-### Descripción y Justificación de Relaciones
+### ✅ Descripción y Justificación
 
-- **Actores Identificados**:
-  - **Cliente**: Responsable de reservar un turno, ver su estado y poder cancelarlo.
-  - **Recepcionista**: Responsable de atender a los clientes según el turno en el que se encuentra, atenderlos y posteriormente avanzar el turno y atender al nuevo cliente.
+**Actores Principales**:
+- **Cliente**: Reserva, consulta y cancela turnos.
+- **Recepcionista**: Atiende clientes, finaliza turnos y gestiona el flujo.
 
-- **Relaciones Aplicadas**:
-  - **<include>**: Utilizado en procesos donde el caso de uso depende de otro obligatorio, como en el caso de reservar un turno, es necesario generar un número para ser atendido.
-  - **<extend>**: Utilizado en procesos donde es opcional el proceso del caso de uso, como en el caso de enviar una notificación SMS, ya que el cliente tiene la opción de querer recibirla o no.
+**Relaciones Aplicadas**:
+- **<<include>>**: Se utiliza cuando un caso de uso depende obligatoriamente de otro. Ejemplo: al reservar un turno, se incluye automáticamente la generación del número de turno.
+- **<<extend>>**: Se usa cuando una funcionalidad es opcional. Ejemplo: enviar una notificación SMS si el cliente opta por recibirla.
 
-## Diagrama de Clases UML
+## 🧱 Diagrama de Clases UML
 
-![Diagrama de Clases](/diagramas/diagrama%20de%20clases.svg)
+### 🎯 Patrones de Diseño Aplicados
 
-### Justificación Profunda de Patrones
+- **🔒 Singleton (ConfiguracionSistema)**
+  - **Justificación**: Garantiza una única instancia de configuración compartida a nivel global.
+  - **Uso arquitectónico**: Centraliza la configuración del sistema (idioma, modo de notificación).
 
-- **Singleton (ConfiguracionSistema)**:
-  - **Justificación**: Asegura que la configuración del sistema sea única y accesible globalmente, manteniendo la consistencia.
-  - **Intención arquitectónica**: Proveer un punto de acceso global y controlar el acceso concurrente a la configuración del sistema.
+- **📐 Prototype (PlantillaMovimiento)**
+  - **Justificación**: Permite duplicar objetos complejos sin necesidad de crear nuevas instancias desde cero.
+  - **Uso arquitectónico**: Clonación rápida de plantillas de atención.
 
-- **Prototype (PlantillaMovimiento)**:
-  - **Justificación**: Facilita la creación de objetos mediante la clonación de una instancia prototípica, reduciendo la necesidad de crear instancias desde cero.
-  - **Intención arquitectónica**: Permitir la clonación eficiente de objetos complejos.
+- **🔌 Adapter (AdaptadorSMS)**
+  - **Justificación**: Facilita la comunicación con el servicio externo de mensajería.
+  - **Uso arquitectónico**: Permite adaptar la interfaz de ServicioSMSExterno al sistema interno.
 
-- **Adapter (Adaptador)**:
-  - **Justificación**: Permite la integración con sistemas externos de notificación SMS, adaptando interfaces incompatibles.
-  - **Intención arquitectónica**: Facilitar la interoperabilidad entre el sistema de gestión de turnos y servicios externos de notificación.
+## 🖥️ Diagrama de Implementación UML
 
-## Diagrama de Implementación UML
+### ⚙️ Decisiones Técnicas
 
-![Diagrama de Implementación](/diagramas/diagram%20de%20implementacion.svg)
+**Nodos definidos**:
+- **Cliente Web**: Punto de acceso del usuario final (navegador).
+- **Servidor de Aplicaciones**: Lógica de negocio, controladores y patrones implementados.
+- **Base de Datos**: Persistencia de turnos.
+- **Servicio SMS**: Servicio externo consumido vía API REST.
 
-### Decisiones Técnicas
+**Componentes claves**:
+- **Aplicación Tunomático**: Encapsula la lógica principal.
+- **GestorTurnos**: Orquesta los casos de uso.
+- **ConfiguracionSistema**: Componente global (Singleton).
+- **AdaptadorSMS**: Adaptador hacia el servicio externo.
 
-- **Nodos Físicos**: El sistema se despliega en un servidor de aplicaciones que maneja las solicitudes de los clientes y recepcionistas.
-- **Componentes**: Integración con servicios de mensajería SMS para notificaciones opcionales a los clientes.
-- **Conexiones**: Se eligió un enfoque basado en microservicios para permitir la escalabilidad y flexibilidad del sistema.
-- **Notas UML**: Explican cómo los patrones de diseño se reflejan en la arquitectura física.
+**Notas UML**:
+- Se utilizó el estilo de componentes para destacar la función de cada módulo dentro del sistema.
+- Las conexiones reflejan tecnologías reales (HTTP, JDBC, REST).
 
-## Reflexiones Finales del Modelado
+## 📚 Reflexiones Finales
 
-El modelado arquitectónico del Sistema Tunomático ha permitido una comprensión profunda de las interacciones y dependencias dentro del sistema. La aplicación de patrones de diseño ha facilitado la creación de una arquitectura robusta y escalable, capaz de adaptarse a futuras necesidades y cambios tecnológicos.
+Este modelado me permitió comprender de forma profunda cómo una idea funcional puede transformarse en una arquitectura robusta, clara y extensible. La aplicación de patrones no solo mejoró la organización del código, sino que también permitió anticipar escenarios de mantenimiento, escalabilidad y reutilización. Además, plasmar todo en UML me ayudó a visualizar las dependencias y responsabilidades de cada parte del sistema antes de escribir una sola línea de código.
