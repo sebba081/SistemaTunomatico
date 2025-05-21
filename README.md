@@ -11,7 +11,7 @@ El objetivo es representar el sistema desde distintas perspectivas, incluyendo:
 
 ## 🧩 Diagrama de Casos de Uso UML
 
-![Diagrama de Casos de Uso](/diagramas/caso%20de%20uso.svg)
+![Diagrama de Casos de Uso](/diagramas/diagrama%caso%20de%20uso.svg)
 
 ### ✅ Descripción y Justificación
 
