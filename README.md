@@ -11,6 +11,8 @@ El objetivo es representar el sistema desde distintas perspectivas, incluyendo:
 
 ## 🧩 Diagrama de Casos de Uso UML
 
+![Diagrama de Casos de Uso](/diagramas/caso%20de%20uso.svg)
+
 ### ✅ Descripción y Justificación
 
 **Actores Principales**:
@@ -22,6 +24,8 @@ El objetivo es representar el sistema desde distintas perspectivas, incluyendo:
 - **<<extend>>**: Se usa cuando una funcionalidad es opcional. Ejemplo: enviar una notificación SMS si el cliente opta por recibirla.
 
 ## 🧱 Diagrama de Clases UML
+
+![Diagrama de Clases](/diagramas/diagrama%20de%20clases.svg)
 
 ### 🎯 Patrones de Diseño Aplicados
 
@@ -38,6 +42,8 @@ El objetivo es representar el sistema desde distintas perspectivas, incluyendo:
   - **Uso arquitectónico**: Permite adaptar la interfaz de ServicioSMSExterno al sistema interno.
 
 ## 🖥️ Diagrama de Implementación UML
+
+![Diagrama de Implementación](/diagramas/diagram%20de%20implementacion.svg)
 
 ### ⚙️ Decisiones Técnicas
 
