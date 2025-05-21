@@ -20,8 +20,8 @@ El objetivo es representar el sistema desde distintas perspectivas, incluyendo:
 - **Recepcionista**: Atiende clientes, finaliza turnos y gestiona el flujo.
 
 **Relaciones Aplicadas**:
-- **<include>**: Se utiliza cuando un caso de uso depende obligatoriamente de otro. Ejemplo: al reservar un turno, se incluye automáticamente la generación del número de turno.
-- **<extend>**: Se usa cuando una funcionalidad es opcional. Ejemplo: enviar una notificación SMS si el cliente opta por recibirla.
+- **Include**: Se utiliza cuando un caso de uso depende obligatoriamente de otro. Ejemplo: al reservar un turno, se incluye automáticamente la generación del número de turno.
+- **Extend**: Se usa cuando una funcionalidad es opcional. Ejemplo: enviar una notificación SMS si el cliente opta por recibirla.
 
 ## 🧱 Diagrama de Clases UML
 
