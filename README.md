@@ -6,7 +6,7 @@ El presente trabajo consiste en el modelado arquitectónico completo de un Siste
 
 ## Diagrama de Casos de Uso UML
 
-![Diagrama de Casos de Uso](/diagramas/caso%20de%20uso.svg)
+![Diagrama de Casos de Uso](/diagramas/diagrama%20de%20caso%20de%20uso.svg)
 
 ### Descripción y Justificación de Relaciones
 
@@ -38,7 +38,7 @@ El presente trabajo consiste en el modelado arquitectónico completo de un Siste
 
 ## Diagrama de Implementación UML
 
-![Diagrama de Implementación](ruta/al/diagrama/implementacion.png)
+![Diagrama de Implementación](/diagramas/diagram%20de%20implementacion.svg)
 
 ### Decisiones Técnicas
 
